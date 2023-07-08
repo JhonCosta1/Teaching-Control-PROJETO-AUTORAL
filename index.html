@@ -18,7 +18,7 @@
                 
                 <div id="login-corpo">
 
-                    <div style="display: none;">
+                    <div>
                         <h1>Teaching Control</h1>
                         <form>
                             <h2>Área de Acesso</h2>
@@ -88,7 +88,7 @@
                         </form>
                     </div>
 
-                    <div class="recuperar-senha-corpo">
+                    <div class="recuperar-senha-corpo" style="display: none;">
                         <h1>Teaching Control</h1>
                         <form class="recuperar">
                             <h2>Vamos recuperar seu acesso:</h2>
@@ -99,6 +99,25 @@
                                 <input class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
                             </div>
                             <button type="submit">Enviar e-mail de recuperação de acesso</button>
+                            <button type="submit" class="btn-cadastro">Voltar para tela de login</button>
+                        </form>
+                    </div>
+
+                    <div class="ajuda-tela" style="display: none;">
+                        <h1>Teaching Control</h1>
+                        <form class="recuperar">
+                            <h2>Estamos aqui para te ajudar!</h2>
+                            <P>Descreva sua dúvida ou solicitação abaixo:</P>
+                            <div>
+                                <input class="input-with-icon-r" type="email" maxlength="35" placeholder="Digite o E-mail" required>
+                            </div>
+                            <div>
+                                <input class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
+                            </div>
+                            <div>
+                                <textarea id="area-d" class="input-with-icon-r" maxlength="400" placeholder="Digite aqui sua dúvida" required></textarea>
+                            </div>
+                            <button type="submit">Enviar dúvida/solicitação</button>
                             <button type="submit" class="btn-cadastro">Voltar para tela de login</button>
                         </form>
                     </div>

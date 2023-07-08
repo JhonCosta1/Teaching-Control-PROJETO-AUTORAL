@@ -200,3 +200,35 @@ form.recuperar {
     border-radius: 5px;
 }
 
+form.ajuda-tela {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.area-duvida{
+
+    width: 250px;
+    height: 100px;
+}
+
+.input-with-icon-ad {
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid  #75b4f7;
+}
+
+textarea:focus {
+    outline: 1px solid #9c75f7;
+}
+
+textarea#area-d{
+    resize: none;
+    height: 100px;
+    width: 250px;
+}
