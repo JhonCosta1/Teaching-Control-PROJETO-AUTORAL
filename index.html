@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="icon/lapis.png" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="fontaw/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
         <title>Teaching Control - gerenciamento escolar</title>
     </head>
     <body>
@@ -28,7 +28,7 @@
                                 </div>
 
                             <div class="input-container">
-                                <input type="password" maxlength="8" class="input-with-icon" placeholder="Senha">
+                                <input type="password" maxlength="17" class="input-with-icon" placeholder="Senha">
                                 <span class="icon"><i class="fa-solid fa-lock " style="color: #75b4f7"></i></span>
                             </div>
                                 
@@ -53,7 +53,7 @@
                         </form>
                     </div>
 
-                    <div class="cadastro-corpo">
+                    <div class="cadastro-corpo" style="display: none;">
                         <h1>Teaching Control</h1>
                         <p>Vamos realizar seu cadastro, precisamos apenas de algumas informações:</p>
                         <form class="cadastro">
@@ -85,6 +85,21 @@
                             </div>
                             <button type="submit">Finalizar cadastro</button>
                             <button type="submit" class="btn-cadastro">Já tem cadastro? Click aqui para acessar</button>
+                        </form>
+                    </div>
+
+                    <div class="recuperar-senha-corpo">
+                        <h1>Teaching Control</h1>
+                        <form class="recuperar">
+                            <h2>Vamos recuperar seu acesso:</h2>
+                            <div>
+                                <input class="input-with-icon-r" type="email" maxlength="35" placeholder="Digite o E-mail" required>
+                            </div>
+                            <div>
+                                <input class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
+                            </div>
+                            <button type="submit">Enviar e-mail de recuperação de acesso</button>
+                            <button type="submit" class="btn-cadastro">Voltar para tela de login</button>
                         </form>
                     </div>
                 </div>

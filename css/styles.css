@@ -189,3 +189,14 @@ div i {
     border: 1px solid  #75b4f7;
 }
 
+form.recuperar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
