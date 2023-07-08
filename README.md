@@ -1,2 +1,2 @@
-# control-learn
-authorial project
+# Teaching Control
+authorial project  - projeto autoral
