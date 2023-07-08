@@ -59,21 +59,32 @@
                         <form class="cadastro">
                             <h2>Área de Cadastro</h2>
                             <div>
-                                <input class="input-with-icon-r" type="text" maxlength="8" placeholder="Usuário" required>
+                                <input class="input-with-icon-r" type="text" maxlength="8" placeholder="Digite o Usuário" required>
                             </div>
                             <div>
-                                <input class="input-with-icon-r" type="password" maxlength="8" placeholder="Senha" required>
-                                <input class="input-with-icon-r" type="password" maxlength="17" placeholder="Confirme a senha" required>
+                                <input class="input-with-icon-r" type="password" maxlength="17" placeholder="Digite a Senha" required>
+                                <input class="input-with-icon-r" type="password" maxlength="17" placeholder="Confirme a Senha" required>
                             </div>
                             <div>
-                                <input class="input-with-icon-r" type="email" maxlength="35" placeholder="E-mail" required>
-                                <input class="input-with-icon-r" type="email" maxlength="35" placeholder="Confirme e-mail" required>
+                                <input class="input-with-icon-r" type="email" maxlength="35" placeholder="Digite o E-mail" required>
+                                <input class="input-with-icon-r" type="email" maxlength="35" placeholder="Confirme E-mail" required>
                             </div>
                             <div>
-                                <input class="input-with-icon-r" type="number" minlength="11" maxlength="11" placeholder="E-mail" required>
+                                <input class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
+                                <input class="input-with-icon-r" type="text" maxlength="11" placeholder="Confirme o CPF" required>
                             </div>
-                            <button type="submit">Entrar</button>
-                            <button type="submit" class="btn-cadastro">Cadastre-se</button>
+                            <div>
+                                <select class="input-with-icon-r" required>
+                                    <option value="diretor">Diretor</option>
+                                    <option value="administrador">Administração</option>
+                                    <option value="professor">Professor</option>
+                                    <option value="aluno">Aluno</option>
+                                    <option value="funcionarioTemp">Funcionário Temporário</option>
+                                    <option value="funcionarioGe">Funcionário Geral</option>
+                                </select>
+                            </div>
+                            <button type="submit">Finalizar cadastro</button>
+                            <button type="submit" class="btn-cadastro">Já tem cadastro? Click aqui para acessar</button>
                         </form>
                     </div>
                 </div>
