@@ -181,7 +181,9 @@ div i {
 }
 
 .input-with-icon-r {
-    padding-top: 8px;
+    padding-top: 4px;
+    padding-bottom:  4px;
+    padding-left:  4px;
     margin-bottom: 10px;
     border-radius: 4px;
     border: 1px solid  #75b4f7;
