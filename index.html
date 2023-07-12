@@ -18,7 +18,7 @@
                 
                 <div id="login-corpo">
 
-                    <div>
+                    <div id="area-de-acesso" style="display: block;">
                         <h1>Teaching Control</h1>
                         <form>
                             <h2>Área de Acesso</h2>
@@ -37,17 +37,13 @@
                                 <input type="checkbox">
                             </label>
                                 
-                            <button type="submit">Entrar</button>
-                            <button type="submit" class="btn-cadastro">Cadastre-se</button>
-                            <a href="">Recuperar Senha</a>
+                            <button class="btnGeral" type="submit">Entrar</button>
+                            <button class="btnGeral" type="submit" class="btn-cadastro">Cadastre-se</button>
+                            <a href="#" class="btnGeral">Recuperar Senha</a>
                             <div id="area-suporte">
                                 <div>
-                                    <h6>Solicite ajuda abaixo</h6>
-                                </div>
-                                    
-                                <div>
-                                    <i class="fa-sharp fa-solid fa-envelope" style="color: #1663e9;"></i>
-                                    <i class="fa-brands fa-square-whatsapp" style="color: #98af46;"></i>
+                                    <h6 class="btnGeral">Solicite ajuda abaixo</h6>
+                                    <i class="fa-sharp fa-solid fa-envelope btnGeral" style="color: #1663e9;"><p style="color: #1663e9;">suporte</p></i>
                                 </div>
                             </div>
                         </form>
@@ -83,8 +79,8 @@
                                     <option value="funcionarioGe">Funcionário Geral</option>
                                 </select>
                             </div>
-                            <button type="submit">Finalizar cadastro</button>
-                            <button type="submit" class="btn-cadastro">Já tem cadastro? Click aqui para acessar</button>
+                            <button class="btnGeral" type="submit">Finalizar cadastro</button>
+                            <button class="btnGeral" type="submit" class="btn-cadastro">Já tem cadastro? Click aqui para acessar</button>
                         </form>
                     </div>
 
@@ -98,8 +94,8 @@
                             <div>
                                 <input class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
                             </div>
-                            <button type="submit">Enviar e-mail de recuperação de acesso</button>
-                            <button type="submit" class="btn-cadastro">Voltar para tela de login</button>
+                            <button class="btnGeral" type="submit">Enviar e-mail de recuperação de acesso</button>
+                            <button class="btnGeral" type="submit" class="btn-cadastro">Voltar para tela de login</button>
                         </form>
                     </div>
 
@@ -117,13 +113,15 @@
                             <div>
                                 <textarea id="area-d" class="input-with-icon-r" maxlength="400" placeholder="Digite aqui sua dúvida" required></textarea>
                             </div>
-                            <button type="submit">Enviar dúvida/solicitação</button>
-                            <button type="submit" class="btn-cadastro">Voltar para tela de login</button>
+                            <button class="btnGeral" type="submit">Enviar dúvida/solicitação</button>
+                            <button class="btnGeral" type="submit" class="btn-cadastro">Voltar para tela de login</button>
                         </form>
                     </div>
                 </div>
             </div>
         </main>
-        <script src="main.js"></script>
+        <script src="main.js">
+            
+        </script>
     </body>
 </html>
