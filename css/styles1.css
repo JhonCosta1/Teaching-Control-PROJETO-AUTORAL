@@ -11,17 +11,46 @@ body {
 }
 
 main {
-    border: 2px solid red;
     height: 100vh;
 }
 
 nav{
-    border: 2px solid blue;
+
+    background-color: blueviolet;
     height: 100vh;
-    width: 0px;
+    width: 300px;
     overflow: hidden;
+    border-right: 2px solid black;
 }
 
-nav:hover {
-    width: 100px;
+nav ul li .area-perfil-usuario {
+
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.perfil-menu {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 12px;
+
+}
+
+.perfil-menu img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+nav:hover{
+    
+}
+
+
