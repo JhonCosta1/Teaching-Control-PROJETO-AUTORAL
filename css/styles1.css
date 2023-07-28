@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    box-sizing: 0;
+}
+
+main {
+    border: 2px solid red;
+    height: 100vh;
+}
+
+nav{
+    border: 2px solid blue;
+    height: 100vh;
+    width: 0px;
+    overflow: hidden;
+}
+
+nav:hover {
+    width: 100px;
+}

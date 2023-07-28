@@ -1,9 +1,10 @@
 
 let btnGeral = [...document.querySelectorAll(".btnGeral")]
 let guardaBtn = []
+let entrar = document.querySelector(".entrar")
 
-for (const botao of btnGeral) {
-    guardaBtn.push(botao)
+for(const botao of btnGeral) {
+  guardaBtn.push(botao)
 }
 
 guardaBtn.map((botao)=>{
@@ -59,5 +60,13 @@ guardaBtn.map((botao)=>{
     })
 })
 
+let redirecionar = ()=>{
+  let a = document.createElement("a")
+  a.href = "sistema1.html"
+  a.target = "_self"
+  a.click()
+}
+entrar.addEventListener("click",()=>{
+  redirecionar()
+})
 
-console.log(guardaBtn)
