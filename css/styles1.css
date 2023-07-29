@@ -5,28 +5,21 @@
 body {
     font-family: sans-serif;
     font-size: 16px;
-    height: 100vh;
     box-sizing: 0;
-}
-nav{
 
+}
+main section nav{
     background-color: #897aed;
-    height: 150vh;
     width: 40px;
     box-shadow: none;
-   
+    height: 140vh;
+    border-right: 2px solid #2c16c3;
+    position: absolute;
 }
-nav ul li .area-perfil-usuario {
-
+section .area-perfil-usuario {
     margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    overflow: hidden;
-
 }
+
 p.b-v {
     color: white;
     font-size: 13px;
@@ -41,10 +34,8 @@ p.b-c {
 .perfil-menu {
     width: 150px;
     height: 150px;
-    overflow: hidden;
     margin-top: 10px;
     margin-bottom: 12px;
-
 }
 .dados-logado {
     margin-bottom: 10px;
@@ -66,6 +57,7 @@ li a {
     margin-bottom: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
+    overflow: hidden;
 }
 .atalhos i {
     margin-left: 8px;
@@ -81,10 +73,11 @@ li a {
 }
 nav:hover {
     width: 300px;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);
+    transition-delay: 0.2s
 }
 li:hover {
     background-color: #a49ae5;
+    transition-delay: 0.2s
 }
 
 /* AJUSTE INDIVIDUAL DOS ICONES E TEXT */
@@ -94,7 +87,8 @@ li:hover {
     left: -2px;
 }
 .t-inicio {
-    
+    position: relative;
+    left: -7px;
 }
 
 
@@ -111,7 +105,8 @@ li:hover {
     left: -4px;
 }
 .t-adm {
-    
+    position: relative;
+    left: -7px;
 }
 
 .i-mat {
@@ -119,7 +114,8 @@ li:hover {
     left: -2px;
 }
 .t-mat {
-    
+    position: relative;
+    left: -7px;
 }
 
 .i-eva {
@@ -156,3 +152,13 @@ li:hover {
 }
 
 /* AJUSTE INDIVIDUAL DOS ICONES E TEXT */
+
+main {
+    display: flex;
+}
+
+.area-wc {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
