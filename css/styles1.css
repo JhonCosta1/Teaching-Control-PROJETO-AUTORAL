@@ -2,27 +2,20 @@
     padding: 0;
     margin: 0;
 }
-
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: sans-serif;
     font-size: 16px;
     height: 100vh;
     box-sizing: 0;
 }
-
-main {
-    height: 100vh;
-}
-
 nav{
 
-    background-color: #75b4f7;
-    height: 100vh;
-    width: 300px;
-    overflow: hidden;
+    background-color: #897aed;
+    height: 150vh;
+    width: 40px;
     box-shadow: none;
+   
 }
-
 nav ul li .area-perfil-usuario {
 
     margin-bottom: 30px;
@@ -30,8 +23,10 @@ nav ul li .area-perfil-usuario {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    display: none;
+    overflow: hidden;
 
+}
 p.b-v {
     color: white;
     font-size: 13px;
@@ -43,7 +38,6 @@ p.b-n {
 p.b-c {
     font-size: 9px;
 }
-
 .perfil-menu {
     width: 150px;
     height: 150px;
@@ -52,11 +46,9 @@ p.b-c {
     margin-bottom: 12px;
 
 }
-
 .dados-logado {
     margin-bottom: 10px;
 }
-
 .perfil-menu img {
     border-radius: 50%;
     width: 100%;
@@ -64,21 +56,103 @@ p.b-c {
     object-fit: cover;
     cursor: pointer;
 }
-
 li a {
     text-decoration: none;
+    white-space: nowrap;
+    color: white;
 }
-
 .atalhos {
     list-style-type: none;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.atalhos i {
+    margin-left: 8px;
+    margin-right: 13px;
+    font-size: 25px;
 }
 
+.texto-menu {
+    line-height:1.5;
+}
+.atalhos-p i {
+    font-size: 25px;
+}
 nav:hover {
     width: 300px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);
+}
+li:hover {
+    background-color: #a49ae5;
+}
+
+/* AJUSTE INDIVIDUAL DOS ICONES E TEXT */
+
+.i-inicio {
+    position: relative;
+    left: -2px;
+}
+.t-inicio {
     
 }
 
 
+.i-perfil {
+    position: relative;
+    left: 0.99px;
+}
+.t-perfil {
+    
+}
 
+.i-adm {
+    position: relative;
+    left: -4px;
+}
+.t-adm {
+    
+}
+
+.i-mat {
+    position: relative;
+    left: -2px;
+}
+.t-mat {
+    
+}
+
+.i-eva {
+    position: relative;
+    left: 1px;
+}
+.t-eva {
+    
+}
+
+.i-fin {
+    position: relative;
+    left: -2px;
+}
+.t-fin {
+    
+}
+
+.i-con {
+    position: relative;
+    left: 0.5px;
+}
+.t-con {
+    
+}
+
+.i-sair {
+    position: relative;
+    left: -2px;
+    
+}
+.t-sair {
+    
+}
+
+/* AJUSTE INDIVIDUAL DOS ICONES E TEXT */
