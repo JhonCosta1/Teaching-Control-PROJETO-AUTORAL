@@ -162,3 +162,13 @@ main {
     justify-content: center;
     flex: 1;
 }
+
+.area-perfil-usuario {
+    border: 1px solid red;
+    text-align: center;
+}
+
+.quadro-noticias {
+    border: 1px solid red;
+    text-align: center;
+}
