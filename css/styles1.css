@@ -73,7 +73,7 @@ li a {
 }
 nav:hover {
     width: 300px;
-    transition-delay: 0.2s
+    transition-delay: 0.1s
 }
 li:hover {
     background-color: #a49ae5;
@@ -170,5 +170,6 @@ main {
 
 .quadro-noticias {
     border: 1px solid red;
+    display: flex;
     text-align: center;
 }
