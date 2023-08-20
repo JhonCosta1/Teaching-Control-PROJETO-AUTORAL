@@ -9,6 +9,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
         <title>Teaching Control - gerenciamento escolar</title>
     </head>
     <body>
@@ -29,15 +31,15 @@
                             </div>
                         </div>
                     </li>-->
-                    <li class="atalhos"><a href="sistema1.html"><i class="fa-solid fa-house i-inicio"></i><span class="texto-menu t-inicio">Início</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-newspaper i-inicio"></i><span class="texto-menu t-inicio">Publicar atualização ou informativo</span></a></li>
-                    <li class="atalhos atalhos-p"><a href="#"><i class="fa-solid fa-user i-perfil"></i><span class="texto-menu t-perfil">Perfil</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-users i-adm"></i><span class="texto-menu t-adm">Administração de Professores</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-address-card i-mat"></i><span class="texto-menu t-mat">Controle de Matrículas</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-book i-eva"></i><span class="texto-menu t-eva">Controle de Evasão</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-money-check-dollar i-fin"></i><span class="texto-menu t-fin">Financeiro</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-gear i-con"></i><span class="texto-menu t-con">Configurações</span></a></li>
-                    <li id="sair" class="atalhos"><a href="#"><i class="fa-solid  fa-person-walking-dashed-line-arrow-right fa-0 i-sair tam-icon"></i><span class="texto-menu t-sair">Sair</span></a></li>
+                    <li class="atalhos"><a href="#"><i class="fa-solid fa-house"></i><span class="texto-menu t-inicio menu inicio-s">Início</span></a></li>
+                    <li class="atalhos"><a href="#"><i class="fa-solid fa-newspaper"></i><span class="texto-menu t-inicio area-publicar menu inicio-s">Publicar atualização ou informativo</span></a></li>
+                    <li class="atalhos atalhos-p"><a href="#"><i class="fa-solid fa-user i-perfil"></i><span class="texto-menu t-perfil area-perfil menu">Perfil</span></a></li>
+                    <li class="atalhos"><a href="#"><i class="fa-solid fa-users i-adm"></i><span class="texto-menu t-adm area-adm-prof menu">Administração de Professores</span></a></li>
+                    <li class="atalhos"><a href="#"><i class="fa-solid fa-address-card i-mat"></i><span class="texto-menu t-mat area-control-matriculas menu">Controle de Matrículas</span></a></li>
+                    <li class="atalhos"><a href="#"><i class="fa-solid fa-book i-eva"></i><span class="texto-menu t-eva area-evasao menu">Controle de Evasão</span></a></li>
+                    <li class="atalhos"><a href="#"><i class="fa-solid fa-money-check-dollar i-fin"></i><span class="texto-menu t-fin area-financeiro menu">Financeiro</span></a></li>
+                    <li class="atalhos"><a href="#"><i class="fa-solid fa-gear i-con"></i><span class="texto-menu t-con area-configuracao menu">Configurações</span></a></li>
+                    <li id="sair" class="atalhos"><a href="#"><i class="fa-solid  fa-person-walking-dashed-line-arrow-right fa-0 i-sair tam-icon"></i><span class="texto-menu t-sair sair">Sair</span></a></li>
                 </ulcla>
             </nav>
             </section>
@@ -45,7 +47,7 @@
                 <article>
                     <div class="area-perfil-usuario">
                         <div class="perfil-menu">
-                            <img src="perfil.jpg">
+                            <img src="../control-learn/img/perfil.jpg">
                         </div>
                         <div class="dados-logado">
                             <p class="b-v">Bem-vindo(a),</p>
@@ -59,7 +61,7 @@
             <section class="quadro-noticias">
                 <article>
                     <aside class="informativo">
-                        <h2>Últimas notícias e atualizações</h2>
+                        <h2 class="">Últimas notícias e atualizações</h2>
                         <section class="lugar-noticias">
                             <div class="noticia">
                                 <h4>Utilidade do material escolar</h4>
@@ -74,77 +76,28 @@
                                 <a href="">Leia mais</a>
                             </div>
 
-                            <div class="noticia">
-                                <h4>Livros vs. Tablets</h4>
-                                <p class="p-data">Publicado em 22 de janeiro de 2023</p>
-                                <p class="p-data">às 12:32</p>
-                                <div>
-                                    <img src="../control-learn/img/book.png" alt="" class="img-noticia">
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam distinctio ut aut minus, hic fugit, aperiam rerum suscipit debitis aliquid repudiandae obcaecati expedita culpa, deserunt repellat voluptatem soluta dicta? Quia?</p>
-                                </div>
-                                <a href="">Leia mais</a>
-                            </div>
-
-                            <div class="noticia">
-                                <h4>Escola moderna?</h4>
-                                <p class="p-data">Publicado em 30 de janeiro de 2023</p>
-                                <p class="p-data">às 15:32</p>
-                                <div>
-                                    <img src="../control-learn/img/mat.jpg" alt="" class="img-noticia">
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorem, illum a id eum excepturi consequatur quisquam alias cum accusantium facere architecto nisi maxime exercitationem, et sapiente, recusandae cupiditate eius.</p>
-                                </div>
-                                <a href="">Leia mais</a>
-                            </div>
-
-                            <div class="noticia">
-                                <h4>Escola moderna?</h4>
-                                <p class="p-data">Publicado em 30 de janeiro de 2023</p>
-                                <p class="p-data">às 15:32</p>
-                                <div>
-                                    <img src="../control-learn/img/mat.jpg" alt="" class="img-noticia">
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorem, illum a id eum excepturi consequatur quisquam alias cum accusantium facere architecto nisi maxime exercitationem, et sapiente, recusandae cupiditate eius.</p>
-                                </div>
-                                <a href="">Leia mais</a>
-                            </div>
-
-
-                            <div class="noticia">
-                                <h4>Escola moderna?</h4>
-                                <p class="p-data">Publicado em 30 de janeiro de 2023</p>
-                                <p class="p-data">às 15:32</p>
-                                <div>
-                                    <img src="../control-learn/img/mat.jpg" alt="" class="img-noticia">
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorem, illum a id eum excepturi consequatur quisquam alias cum accusantium facere architecto nisi maxime exercitationem, et sapiente, recusandae cupiditate eius.</p>
-                                </div>
-                                <a href="">Leia mais</a>
-                            </div>
-
-
-                            <div class="noticia">
-                                <h4>Escola moderna?</h4>
-                                <p class="p-data">Publicado em 30 de janeiro de 2023</p>
-                                <p class="p-data">às 15:32</p>
-                                <div>
-                                    <img src="../control-learn/img/mat.jpg" alt="" class="img-noticia">
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorem, illum a id eum excepturi consequatur quisquam alias cum accusantium facere architecto nisi maxime exercitationem, et sapiente, recusandae cupiditate eius.</p>
-                                </div>
-                                <a href="">Leia mais</a>
-                            </div>
-
-                            
                         </section>
                     </aside>
                 </article>
+            </section>
+
+            <section class="area-cadastrar-noticia" style="display: none;">
+                <div>
+                    <h1>Área para publicação de informativos e atualizações</h1>
+                </div>
+                <form action="">
+                    <label for="titulo">Título da postagem</label><br>
+                    <input type="text" class="ctitulo" id="titulo" name="titulo" required><br>
+                    
+                    <label for="imagem">Imagem para capa</label><br>
+                    <input type="file" class="cimagem" id="imagem" name="imagem" accept="image/*">
+                    
+                    <div id="editor" class="cconteudo">
+                        
+                    </div>
+                    
+                    <button type="submit" class="publicar">Publicar</button>
+                </form>
             </section>
         </main>
         
