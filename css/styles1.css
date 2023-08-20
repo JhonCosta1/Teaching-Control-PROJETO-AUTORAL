@@ -21,7 +21,7 @@ section .area-perfil-usuario {
 }
 
 p.b-v {
-    color: white;
+    color: #897aed;
     font-size: 13px;
     margin-bottom: 7px;
 }
@@ -30,6 +30,7 @@ p.b-n {
 }
 p.b-c {
     font-size: 9px;
+    color: #897aed;
 }
 .perfil-menu {
     width: 150px;
@@ -155,6 +156,7 @@ li:hover {
 
 main {
     display: flex;
+    flex-direction: column;
 }
 
 .area-wc {
@@ -171,5 +173,8 @@ main {
 .quadro-noticias {
     border: 1px solid red;
     display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 0px auto;
 }
