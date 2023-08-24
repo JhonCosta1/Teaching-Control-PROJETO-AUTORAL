@@ -9,8 +9,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
-        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
         <title>Teaching Control - gerenciamento escolar</title>
     </head>
     <body>
@@ -63,18 +61,6 @@
                     <aside class="informativo">
                         <h2 class="">Últimas notícias e atualizações</h2>
                         <section class="lugar-noticias">
-                            <div class="noticia">
-                                <h4>Utilidade do material escolar</h4>
-                                <p class="p-data">Publicado em 20 de janeiro de 2023</pclas>
-                                <p class="p-data">às 08:32</p>
-                                <div>
-                                    <img src="../control-learn/img/download.png" alt="" class="img-noticia">
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum reiciendis dicta minus iure hic recusandae, nesciunt reprehenderit debitis quisquam cum ratione, sequi suscipit nihil molestiae necessitatibus! Alias illum iusto aliquam!</p>
-                                </div>
-                                <a href="">Leia mais</a>
-                            </div>
 
                         </section>
                     </aside>
@@ -90,11 +76,9 @@
                     <input type="text" class="ctitulo" id="titulo" name="titulo" required><br>
                     
                     <label for="imagem">Imagem para capa</label><br>
-                    <input type="file" class="cimagem" id="imagem" name="imagem" accept="image/*">
+                    <input type="file" class="cimagem" id="cptImg" name="imagem" accept="image/*"><br>
                     
-                    <div id="editor" class="cconteudo">
-                        
-                    </div>
+                    <textarea id="conteudo"  class="cconteudo" required></textarea>
                     
                     <button type="submit" class="publicar">Publicar</button>
                 </form>
