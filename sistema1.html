@@ -55,7 +55,6 @@
                     </div>
                 </article>
             </section>
-
             <section class="quadro-noticias">
                 <article>
                     <aside class="informativo">
@@ -73,19 +72,18 @@
                 </div>
                 <form action="">
                     <label for="titulo">Título da postagem</label><br>
-                    <input type="text" class="ctitulo" id="titulo" name="titulo" required><br>
+                    <input type="text" class="ctitulo" id="titulo" name="titulo" required maxlength="27"><br>
                     
                     <label for="imagem">Imagem para capa</label><br>
                     <input type="file" class="cimagem" id="cptImg" name="imagem" accept="image/*"><br>
                     
-                    <textarea id="conteudo"  class="cconteudo" required></textarea>
+                    <textarea id="conteudo"  class="cconteudo" required maxlength="500"></textarea>
                     
                     <button type="submit" class="publicar">Publicar</button>
                 </form>
             </section>
         </main>
-        
-        
+
     <script src="main1.js"></script>
     </body>
 </html>

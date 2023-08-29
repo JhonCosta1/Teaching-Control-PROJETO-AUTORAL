@@ -9,6 +9,22 @@ let areaConfiguracao = document.querySelector(".area-configuracao")
 let sair = document.querySelector(".sair")
 let btnPublicar = document.querySelector(".publicar")
 let menu = [...document.querySelectorAll(".menu")]
+let p = document.createElement("p")
+let p2 = document.createElement("p")
+let p3 = document.createElement("p")
+let div = document.createElement("div")
+let divImg = document.createElement("div")
+let img = document.createElement("img")
+let h4 = document.createElement("h4")
+let btnDel = document.createElement("i")
+let cTitulo = document.querySelector(".ctitulo").value
+let cConteudo = document.querySelector("#conteudo").value
+p3.innerHTML = cTitulo
+let cImagem = document.querySelector(".cimagem").value
+let lugarNoticia = document.querySelector(".lugar-noticias")
+let imgF = document.querySelector(".img-noticia")
+let geral = document.querySelector(".quadro-noticias")
+let retirar = document.querySelector(".delIcon")
 
 menu.map((selecionado)=>{
     selecionado.addEventListener("click", (e)=>{
@@ -37,36 +53,79 @@ menu.map((selecionado)=>{
     })
 })
 
+let del = (card)=>{
+    let geral = document.querySelector(".quadro-noticias")
+    let divP = document.createElement("div")
+    divP.classList.add("geral-modal")
+    /*divP.style.display = "none"*/
+    let div2 = document.createElement("div")
+    let h4 = document.createElement("h4")
+    h4.classList.add("modal-titulo")
+    h4.innerHTML = "ALERTA"
+    div2.appendChild(h4)                
+    let div3 = document.createElement("div")
+    div3.classList.add("conteudo-modal")
+    let p = document.createElement("p")
+    let p2 = document.createElement("p2")
+    p.innerText = "Esta ação deletará a notícia selecionada."
+    p2.innerText = "Deseja seguir e deletar a notícia com título "
+    let div4 = document.createElement("div")
+    div4.classList.add("tituloDel")
+    div3.appendChild(p)
+    div3.appendChild(p2)
+    div3.appendChild(div4)
+    let btnMdel = document.createElement("button")
+    btnMdel.innerText = "Deletar"
+    btnMdel.classList.add("btn-modal-ap")
+    
+    let btnMvol = document.createElement("button")
+    btnMvol.innerText = "Voltar"
+    btnMvol.classList.add("btn-modal-vo")
+    divP.appendChild(div2)
+    divP.appendChild(div3)
+    divP.appendChild(btnMdel)
+    divP.appendChild(btnMvol)
+    geral.appendChild(divP)
+    
+    btnMdel.addEventListener("click", () => {
+        card.remove()
+        divP.remove()
+    });
+}
+
+
+
 let criarCard = ()=>{
     let p = document.createElement("p")
     let p2 = document.createElement("p")
+    let p3 = document.createElement("p")
     let div = document.createElement("div")
     let divImg = document.createElement("div")
     let img = document.createElement("img")
     let h4 = document.createElement("h4")
+    let btnDel = document.createElement("i")
     let cTitulo = document.querySelector(".ctitulo").value
     let cConteudo = document.querySelector("#conteudo").value
-    h4.innerHTML = cTitulo
+    p3.innerHTML = cTitulo
     let cImagem = document.querySelector(".cimagem").value
     let lugarNoticia = document.querySelector(".lugar-noticias")
     let imgF = document.querySelector(".img-noticia")
-   
+    
+
     let dataAtual = new Date()
 
     let addIMG = ()=>{
-         let imagemC = document.querySelector("#cptImg")
-         let arquivo = imagemC.files[0];
+        let imagemC = document.querySelector("#cptImg")
+        let arquivo = imagemC.files[0]
 
-         if(arquivo){
+        if(arquivo != ""){
             let leitor = new FileReader()
             leitor.onload = function(e) {
-                img.src = e.target.result;
-        };
+                img.src = e.target.result
+            };
 
-            leitor.readAsDataURL(arquivo);
+            leitor.readAsDataURL(arquivo)
         }
-
- 
     }
 
     let opcoesDeFormatacao = {
@@ -76,8 +135,8 @@ let criarCard = ()=>{
     hour: '2-digit',
     minute: '2-digit'
     };
-    let formatadorDeData = new Intl.DateTimeFormat('pt-BR', opcoesDeFormatacao);
-    let dataHoraFormatada = formatadorDeData.format(dataAtual);
+    let formatadorDeData = new Intl.DateTimeFormat('pt-BR', opcoesDeFormatacao)
+    let dataHoraFormatada = formatadorDeData.format(dataAtual)
     p.classList.add('p-data')
 
     p.innerHTML = "Publicado em " + dataHoraFormatada
@@ -85,9 +144,13 @@ let criarCard = ()=>{
     addIMG()
     div.classList.add("noticia")
     p2.innerHTML = cConteudo
-    
-
+    btnDel.className = "fa-solid fa-trash"
+    btnDel.classList.add("delIcon")
+    btnDel.classList.add("formIcon")
+    let card = document.querySelector(".noticia")
     divImg.appendChild(img)
+    h4.appendChild(p3)
+    h4.appendChild(btnDel)
     div.appendChild(h4)
     div.appendChild(p)
     div.appendChild(divImg)
@@ -95,20 +158,20 @@ let criarCard = ()=>{
 
     lugarNoticia.appendChild(div)
 
-
-}
+    btnDel.addEventListener("click", (event) => {
+        if (event.target.classList.contains("delIcon")) {
+            del(div)
+            btnDel.classList.remove("delIcon")
+        }
+    })
+}   
 
 
 
 btnPublicar.addEventListener("click",(e)=>{
     e.preventDefault()
-
     criarCard()
 })
-
-
-
-
 
 
 
