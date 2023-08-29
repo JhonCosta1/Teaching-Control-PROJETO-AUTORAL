@@ -53,7 +53,7 @@ menu.map((selecionado)=>{
     })
 })
 
-let del = (card)=>{
+let del = (card, classe)=>{
     let geral = document.querySelector(".quadro-noticias")
     let divP = document.createElement("div")
     divP.classList.add("geral-modal")
@@ -90,7 +90,12 @@ let del = (card)=>{
     btnMdel.addEventListener("click", () => {
         card.remove()
         divP.remove()
-    });
+    })
+
+    btnMvol.addEventListener("click", () => {
+        divP.remove()
+        classe.classList.add("delIcon")
+    })
 }
 
 
@@ -160,8 +165,9 @@ let criarCard = ()=>{
 
     btnDel.addEventListener("click", (event) => {
         if (event.target.classList.contains("delIcon")) {
-            del(div)
             btnDel.classList.remove("delIcon")
+            del(div, btnDel)
+            
         }
     })
 }   
