@@ -110,12 +110,12 @@ let criarCard = ()=>{
     let h4 = document.createElement("h4")
     let btnDel = document.createElement("i")
     let cTitulo = document.querySelector(".ctitulo").value
-    let cConteudo = document.querySelector("#conteudo").value
+    let cConteudo = document.querySelector("#conteudo").value.trim();
     p3.innerHTML = cTitulo
     let cImagem = document.querySelector(".cimagem").value
     let lugarNoticia = document.querySelector(".lugar-noticias")
     let imgF = document.querySelector(".img-noticia")
-    
+    let imagemC = document.querySelector("#cptImg").value
 
     let dataAtual = new Date()
 
@@ -123,14 +123,17 @@ let criarCard = ()=>{
         let imagemC = document.querySelector("#cptImg")
         let arquivo = imagemC.files[0]
 
-        if(arquivo != ""){
+        if (arquivo) {
             let leitor = new FileReader()
             leitor.onload = function(e) {
                 img.src = e.target.result
-            };
-
+            }
             leitor.readAsDataURL(arquivo)
+        } else {
+            alert("Sem imagem")
         }
+
+
     }
 
     let opcoesDeFormatacao = {
@@ -161,7 +164,23 @@ let criarCard = ()=>{
     div.appendChild(divImg)
     div.appendChild(p2)
 
-    lugarNoticia.appendChild(div)
+   
+
+ 
+    if(cTitulo !== ""){
+        lugarNoticia.appendChild(div)
+    } else {
+        alert('Lamento! É necessário informar o Título da notícia')
+    }
+    if(cConteudo !== ""){
+        lugarNoticia.appendChild(div)
+    } else {
+        alert('Lamento! É necessário informar o Conteúdo da notícia')
+    }
+
+
+    
+    
 
     btnDel.addEventListener("click", (event) => {
         if (event.target.classList.contains("delIcon")) {
