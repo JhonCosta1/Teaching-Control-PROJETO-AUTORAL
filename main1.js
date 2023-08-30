@@ -130,7 +130,7 @@ let criarCard = ()=>{
             }
             leitor.readAsDataURL(arquivo)
         } else {
-            alert("Sem imagem")
+            alert("Lamento! É necessário anexar uma imagem para capa da notícia")
         }
 
 
