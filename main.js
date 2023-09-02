@@ -2,6 +2,39 @@
 let btnGeral = [...document.querySelectorAll(".btnGeral")]
 let guardaBtn = []
 let entrar = document.querySelector(".entrar")
+let btnCadastrar = document.querySelector("#btnCadastrar")
+
+
+
+
+btnCadastrar.addEventListener("click", (e)=>{
+  e.preventDefault()
+  let userC = document.querySelector("#userC").value.trim()
+  let senhaC = document.querySelector("#senhaC").value.trim()
+  let senhaC2 = document.querySelector("#senhaC2").value.trim()
+  let emailC = document.querySelector("#emailC").value.trim()
+  let emailC2 = document.querySelector("#emailC2").value.trim()
+  let cpfC = document.querySelector("#cpfC").value.trim()
+  let cpfC2 = document.querySelector("#cpfC2").value.trim()
+
+  if(userC && senhaC && senhaC2 && emailC && emailC2 && cpfC && cpfC2 != ""){
+    let userCadastrados = JSON.parse(localStorage.getItem('userCadastrados') || '[]')
+
+    userCadastrados.push({
+      nome: userC,
+      senha: senhaC,
+      email: emailC,
+      cpf: cpfC
+    })
+
+    localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
+
+  } else {
+    console.log("já era")
+  }
+
+})
+
 
 for(const botao of btnGeral) {
   guardaBtn.push(botao)

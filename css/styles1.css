@@ -277,7 +277,9 @@ input[type="text"]{
 }
 
 input[type="text"],
-input[type="file"]
+input[type="file"],
+input[type="email"],
+input[type="date"]
 {   
     padding: 10px;
     margin-bottom: 7px;
@@ -297,6 +299,7 @@ input[type="file"]
     word-wrap: break-word;
     overflow: hidden;
 }
+
 .formIcon {
     font-size: 20px;
     color: #b11a1a;
@@ -376,4 +379,25 @@ input[type="file"]
     font-size: 10px;
     color: white;
     background-color: #897aed;
+}
+
+.perfil-geral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.perfil-geral input {
+    padding: 5px;
+}
+
+.perfil-geral label {
+    
 }

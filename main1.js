@@ -33,22 +33,31 @@ menu.map((selecionado)=>{
         let areaWC = document.querySelector(".area-wc")
         let quadroNoticias = document.querySelector(".quadro-noticias")
         let areaCadastrarNoticia = document.querySelector(".area-cadastrar-noticia")
-
+        let perfil = document.querySelector(".perfil-geral")
         switch (true) {
             case clicado.includes("Início"):
                 areaWC.style.display = "";
                 quadroNoticias.style.display = "";
+                perfil.style.display = "none";
                 areaCadastrarNoticia.style.display = "none";
                 break;
 
             case clicado.includes("Publicar atualização ou informativo"):
                 areaWC.style.display = "none";
+                perfil.style.display = "none";
                 quadroNoticias.style.display = "none";
                 areaCadastrarNoticia.style.display = "";
                 break;
-        
-            default: 
-                break;
+
+                case clicado.includes("Perfil"):
+                    areaWC.style.display = "none";
+                    quadroNoticias.style.display = "none";
+                    areaCadastrarNoticia.style.display = "none";
+                    perfil.style.display = "";
+                    break;
+            
+                default: 
+                    break;
         }
     })
 })
@@ -98,8 +107,6 @@ let del = (card, classe)=>{
     })
 }
 
-
-
 let criarCard = ()=>{
     let p = document.createElement("p")
     let p2 = document.createElement("p")
@@ -117,23 +124,19 @@ let criarCard = ()=>{
     let imgF = document.querySelector(".img-noticia")
     let imagemC = document.querySelector("#cptImg").value
 
+
     let dataAtual = new Date()
 
     let addIMG = ()=>{
         let imagemC = document.querySelector("#cptImg")
         let arquivo = imagemC.files[0]
-
         if (arquivo) {
             let leitor = new FileReader()
             leitor.onload = function(e) {
                 img.src = e.target.result
             }
             leitor.readAsDataURL(arquivo)
-        } else {
-            alert("Lamento! É necessário anexar uma imagem para capa da notícia")
         }
-
-
     }
 
     let opcoesDeFormatacao = {
@@ -167,16 +170,12 @@ let criarCard = ()=>{
    
 
  
-    if(cTitulo !== ""){
+    if(cTitulo !== "" && cConteudo !== ""){
         lugarNoticia.appendChild(div)
     } else {
-        alert('Lamento! É necessário informar o Título da notícia')
+        alert('Lamento! Mas é necessário preencher o Título e incluir um texto para a notícia.')
     }
-    if(cConteudo !== ""){
-        lugarNoticia.appendChild(div)
-    } else {
-        alert('Lamento! É necessário informar o Conteúdo da notícia')
-    }
+   
 
 
     
@@ -189,14 +188,16 @@ let criarCard = ()=>{
             
         }
     })
+
 }   
-
-
 
 btnPublicar.addEventListener("click",(e)=>{
     e.preventDefault()
     criarCard()
+
 })
+
+
 
 
 
