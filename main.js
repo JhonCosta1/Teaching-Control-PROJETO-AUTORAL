@@ -3,9 +3,30 @@ let btnGeral = [...document.querySelectorAll(".btnGeral")]
 let guardaBtn = []
 let entrar = document.querySelector(".entrar")
 let btnCadastrar = document.querySelector("#btnCadastrar")
+let areaAcesso = document.querySelector("#area-de-acesso")
+let cadastroCorpo = document.querySelector(".cadastro-corpo")
+let recuperarSenhaCorpo = document.querySelector(".recuperar-senha-corpo")
+let ajudaTela = document.querySelector(".ajuda-tela")
+let retornoCadastro = document.querySelector(".retornoCadastro")
 
-
-
+let redirecionarLogin = ()=>{
+  let userC = document.querySelector("#userC").value = ""
+  let senhaC = document.querySelector("#senhaC").value = ""
+  let senhaC2 = document.querySelector("#senhaC2").value = ""
+  let emailC = document.querySelector("#emailC").value = ""
+  let emailC2 = document.querySelector("#emailC2").value = ""
+  let cpfC = document.querySelector("#cpfC").value = ""
+  let cpfC2 = document.querySelector("#cpfC2").value = ""
+  let retornoCadastro = document.querySelector(".retornoCadastro")
+  retornoCadastro.style.display = "none"
+  
+  setTimeout(()=>{
+    areaAcesso.style.display = "";
+    cadastroCorpo.style.display = "none";
+    recuperarSenhaCorpo.style.display = "none";
+    ajudaTela.style.display = "none";
+  }, 3000)
+}
 
 btnCadastrar.addEventListener("click", (e)=>{
   e.preventDefault()
@@ -32,7 +53,9 @@ btnCadastrar.addEventListener("click", (e)=>{
   
       localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
       retornoCadastro.style.display = "block"
-      retornoCadastroH3.innerHTML = "Cadastro finalizado com sucesso!"
+      retornoCadastroH3.innerHTML = "Cadastro finalizado com sucesso! Você será direcionado para tela de Login em alguns segundos."
+      redirecionarLogin()
+
     } else if(senhaC !== senhaC2 ){
       retornoCadastro.style.display = "block"
       retornoCadastroH3.innerHTML = "Lamento! As senhas devem ser iguais!"

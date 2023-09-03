@@ -266,6 +266,10 @@ textarea:focus {
     outline: 1px solid #9c75f7;
 }
 
+.ctitulo:focus {
+    outline: 1px solid #9c75f7;
+}
+
 label {
     font-weight: bold;
     margin-top: 15px;
