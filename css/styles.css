@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto';
     font-size: 16px;
     height: 100vh;
     box-sizing: 0;
@@ -231,4 +231,12 @@ textarea#area-d{
     resize: none;
     height: 100px;
     width: 250px;
+}
+
+.retornoCadastro {
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #74acdd;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }

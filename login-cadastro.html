@@ -6,6 +6,9 @@
         <link rel="shortcut icon" href="icon/lapis.png" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
         <title>Teaching Control - gerenciamento escolar</title>
     </head>
     <body>
@@ -54,6 +57,9 @@
                         <p>Vamos realizar seu cadastro, precisamos apenas de algumas informações:</p>
                         <form class="cadastro">
                             <h2>Área de Cadastro</h2>
+                            <div class="retornoCadastro" style="display: none;">
+                                <h3 class="retornoCadastroH3"></h3>
+                            </div>
                             <div>
                                 <input id="userC" class="input-with-icon-r" type="text" maxlength="8" placeholder="Digite o Usuário" required>
                             </div>
@@ -71,7 +77,7 @@
                             </div>
 
                             <button id="btnCadastrar" class="btnGeral" type="submit">Finalizar cadastro</button>
-                            <button class="btnGeral" type="submit" class="btn-cadastro">Já tem cadastro? Click aqui para acessar</button>
+                            <button class="btnGeral" type="submit" class="btn-cadastro">Já tem cadastro? Clique aqui para acessar</button>
                         </form>
                     </div>
 

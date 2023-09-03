@@ -16,18 +16,33 @@ btnCadastrar.addEventListener("click", (e)=>{
   let emailC2 = document.querySelector("#emailC2").value.trim()
   let cpfC = document.querySelector("#cpfC").value.trim()
   let cpfC2 = document.querySelector("#cpfC2").value.trim()
+  let retornoCadastro = document.querySelector(".retornoCadastro")
+  let retornoCadastroH3 = document.querySelector(".retornoCadastroH3")
 
   if(userC && senhaC && senhaC2 && emailC && emailC2 && cpfC && cpfC2 != ""){
-    let userCadastrados = JSON.parse(localStorage.getItem('userCadastrados') || '[]')
+    if(senhaC === senhaC2 && emailC === emailC2 && cpfC === cpfC2){
+      let userCadastrados = JSON.parse(localStorage.getItem('userCadastrados') || '[]')
 
-    userCadastrados.push({
-      nome: userC,
-      senha: senhaC,
-      email: emailC,
-      cpf: cpfC
-    })
-
-    localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
+      userCadastrados.push({
+        nome: userC,
+        senha: senhaC,
+        email: emailC,
+        cpf: cpfC
+      })
+  
+      localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
+      retornoCadastro.style.display = "block"
+      retornoCadastroH3.innerHTML = "Cadastro finalizado com sucesso!"
+    } else if(senhaC !== senhaC2 ){
+      retornoCadastro.style.display = "block"
+      retornoCadastroH3.innerHTML = "Lamento! As senhas devem ser iguais!"
+    } else if(emailC !== emailC2 ){
+      retornoCadastro.style.display = "block"
+      retornoCadastroH3.innerHTML = "Lamento! Os e-mails devem ser iguais!"
+    } else if(cpfC !== cpfC2 ){
+      retornoCadastro.style.display = "block"
+      retornoCadastroH3.innerHTML = "Lamento! Os CPFs devem ser iguais!"
+    } 
 
   } else {
     console.log("já era")
