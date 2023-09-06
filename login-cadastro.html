@@ -85,13 +85,16 @@
                         <h1>Teaching Control</h1>
                         <form class="recuperar">
                             <h2>Vamos recuperar seu acesso:</h2>
-                            <div>
-                                <input class="input-with-icon-r" type="email" maxlength="35" placeholder="Digite o E-mail" required>
+                            <div class="retornoCadastroRec" style="display: none;">
+                                <p class="retornoRecuperar"></p>
                             </div>
                             <div>
-                                <input class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
+                                <input id="emailRec" class="input-with-icon-r" type="email" maxlength="35" placeholder="Digite o E-mail" required>
                             </div>
-                            <button class="btnGeral" type="submit">Enviar e-mail de recuperação de acesso</button>
+                            <div>
+                                <input id="cpfRec" class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
+                            </div>
+                            <button class="btnGeral" type="submit" id="btnRecSenha">Enviar e-mail de recuperação de acesso</button>
                             <button class="btnGeral" type="submit" class="btn-cadastro">Voltar para tela de login</button>
                         </form>
                     </div>
@@ -100,17 +103,20 @@
                         <h1>Teaching Control</h1>
                         <form class="recuperar">
                             <h2>Estamos aqui para te ajudar!</h2>
-                            <P>Descreva sua dúvida ou solicitação abaixo:</P>
+                            <div class="retornoCadastroAjuda" style="display: none;">
+                                <p class="retornoCadastroP"></p>
+                            </div>
+                            <P class="tituloDuvida">Descreva sua dúvida ou solicitação abaixo:</P>
                             <div>
-                                <input class="input-with-icon-r" type="email" maxlength="35" placeholder="Digite o E-mail" required>
+                                <input id="emailAjuda" class="input-with-icon-r" type="email" maxlength="35" placeholder="Digite o E-mail" required>
                             </div>
                             <div>
-                                <input class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
+                                <input id="cpfAjuda" class="input-with-icon-r" type="text" maxlength="11" placeholder="Digite o CPF" required>
                             </div>
                             <div>
                                 <textarea id="area-d" class="input-with-icon-r" maxlength="400" placeholder="Digite aqui sua dúvida" required></textarea>
                             </div>
-                            <button class="btnGeral" type="submit">Enviar dúvida/solicitação</button>
+                            <button class="btnGeral" type="submit" id="btnDuvida">Enviar dúvida/solicitação</button>
                             <button class="btnGeral" type="submit" class="btn-cadastro">Voltar para tela de login</button>
                         </form>
                     </div>

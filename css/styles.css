@@ -241,3 +241,23 @@ textarea#area-d{
     border-radius: 5px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }
+
+.retornoCadastroP {
+    color: black;
+    margin-bottom: 25px;
+    font-size: 13px;
+    padding: 10px;
+    background-color: #74acdd;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.retornoRecuperar {
+    color: black;
+    margin-bottom: 25px;
+    font-size: 13px;
+    padding: 10px;
+    background-color: #74acdd;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}

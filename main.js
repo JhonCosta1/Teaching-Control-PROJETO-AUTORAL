@@ -3,6 +3,8 @@ let btnGeral = [...document.querySelectorAll(".btnGeral")]
 let guardaBtn = []
 let entrar = document.querySelector(".entrar")
 let btnCadastrar = document.querySelector("#btnCadastrar")
+let btnDuvida = document.querySelector("#btnDuvida")
+let btnRecSenha = document.querySelector("#btnRecSenha")
 let areaAcesso = document.querySelector("#area-de-acesso")
 let cadastroCorpo = document.querySelector(".cadastro-corpo")
 let recuperarSenhaCorpo = document.querySelector(".recuperar-senha-corpo")
@@ -18,15 +20,33 @@ let redirecionarLogin = ()=>{
   let cpfC = document.querySelector("#cpfC").value = ""
   let cpfC2 = document.querySelector("#cpfC2").value = ""
   let retornoCadastro = document.querySelector(".retornoCadastro")
-  retornoCadastro.style.display = "none"
-  
+
   setTimeout(()=>{
-    areaAcesso.style.display = "";
-    cadastroCorpo.style.display = "none";
-    recuperarSenhaCorpo.style.display = "none";
-    ajudaTela.style.display = "none";
+    areaAcesso.style.display = ""
+    cadastroCorpo.style.display = "none"
+    recuperarSenhaCorpo.style.display = "none"
+    ajudaTela.style.display = "none"
+    retornoCadastro.style.display = "none"
   }, 3000)
 }
+
+btnRecSenha.addEventListener("click", (e)=>{
+  e.preventDefault()
+  let emailRec = document.querySelector("#emailRec")
+  let cpfRec = document.querySelector("#cpfRec")
+  let retornoCadastroRec = document.querySelector(".retornoCadastroRec")
+  let retornoRecuperar = document.querySelector(".retornoRecuperar")
+  
+  if(emailRec.value && cpfRec.value != ""){
+    emailRec.style.display = "none"
+    cpfRec.style.display = "none"
+    btnRecSenha.style.display = "none"
+    retornoCadastroRec.style.display = "block"
+    retornoRecuperar.innerHTML = "Enviamos para seu e-mail " + emailRec.value + " o link para redefinir a senha."
+    emailRec.value = ""
+    cpfRec.value = ""
+  }
+})
 
 btnCadastrar.addEventListener("click", (e)=>{
   e.preventDefault()
@@ -68,11 +88,34 @@ btnCadastrar.addEventListener("click", (e)=>{
     } 
 
   } else {
-    console.log("já era")
+    retornoCadastro.style.display = "block"
+    retornoCadastroH3.innerHTML = "Preencha todos os campos!"
   }
 
 })
 
+btnDuvida.addEventListener("click", (e)=>{
+  e.preventDefault()
+  let emailAjuda = document.querySelector("#emailAjuda")
+  let cpfAjuda = document.querySelector("#cpfAjuda")
+  let textoAjuda = document.querySelector("#area-d")
+  let retornoCadastroAjuda = document.querySelector(".retornoCadastroAjuda")
+  let retornoCadastroP = document.querySelector(".retornoCadastroP")
+  
+  if(emailAjuda.value && cpfAjuda.value && textoAjuda.value != ""){
+    let tituloDuvida = document.querySelector(".tituloDuvida")
+    tituloDuvida.style.display = "none"
+    emailAjuda.style.display = "none"
+    cpfAjuda.style.display = "none"
+    textoAjuda.style.display = "none"
+    btnDuvida.style.display = "none"
+    retornoCadastroAjuda.style.display = "block"
+    retornoCadastroP.innerHTML = "Recebemos sua mensagem! Retornaremos o contato em até 03 dias úteis através do seu e-mail  " + emailAjuda.value + "."
+    emailAjuda.value = ""
+    cpfAjuda.value = ""
+    textoAjuda.value = ""
+  }
+})
 
 for(const botao of btnGeral) {
   guardaBtn.push(botao)
@@ -87,6 +130,15 @@ guardaBtn.map((botao)=>{
         let cadastroCorpo = document.querySelector(".cadastro-corpo")
         let recuperarSenhaCorpo = document.querySelector(".recuperar-senha-corpo")
         let ajudaTela = document.querySelector(".ajuda-tela")
+        let emailAjuda = document.querySelector("#emailAjuda")
+        let cpfAjuda = document.querySelector("#cpfAjuda")
+        let textoAjuda = document.querySelector("#area-d")
+        let retornoCadastroAjuda = document.querySelector(".retornoCadastroAjuda")
+        let tituloDuvida = document.querySelector(".tituloDuvida")
+        let btnDuvida = document.querySelector("#btnDuvida")
+        let emailRec = document.querySelector("#emailRec")
+        let cpfRec = document.querySelector("#cpfRec")
+        let retornoCadastroRec = document.querySelector(".retornoCadastroRec")
 
 
         switch (true) {
@@ -116,6 +168,16 @@ guardaBtn.map((botao)=>{
               cadastroCorpo.style.display = "none";
               recuperarSenhaCorpo.style.display = "none";
               ajudaTela.style.display = "none";
+              tituloDuvida.style.display = "block"
+              emailAjuda.style.display = "block"
+              cpfAjuda.style.display = "block"
+              textoAjuda.style.display = "block"
+              retornoCadastroAjuda.style.display = "none"
+              btnDuvida.style.display = "block"
+              emailRec.style.display = "block"
+              cpfRec.style.display = "block"
+              btnRecSenha.style.display = "none"
+              retornoCadastroRec.style.display = "none"
               break;
 
             case btnC.includes("suporte"):
