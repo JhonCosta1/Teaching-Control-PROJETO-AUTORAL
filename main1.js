@@ -7,6 +7,7 @@ let areaEvasao = document.querySelector(".area-evasao")
 let areaFinanceiro = document.querySelector(".area-financeiro")
 let areaConfiguracao = document.querySelector(".area-configuracao")
 let sair = document.querySelector(".sair")
+let sairLogin = document.querySelector("#sair")
 let btnPublicar = document.querySelector(".publicar")
 let menu = [...document.querySelectorAll(".menu")]
 let p = document.createElement("p")
@@ -197,8 +198,24 @@ btnPublicar.addEventListener("click",(e)=>{
 
 })
 
+let redirecionarLogin = ()=>{
+    let a = document.createElement("a")
+    a.href = "index.html"
+    a.target = "_self"
+    a.click()
+}
 
+sairLogin.addEventListener("click", ()=>{
+    localStorage.removeItem('token')
+    redirecionarLogin()
+})
 
+if(localStorage.getItem('token') == null) {
+    let validadorSemAcesso = document.querySelector(".validador-sem-acesso")
+    validadorSemAcesso.style.display = "none"
+    alert('Você deve estar logado para acessar essa página!')
+    redirecionarLogin()
+}
 
 
 

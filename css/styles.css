@@ -261,3 +261,17 @@ textarea#area-d{
     border-radius: 5px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }
+
+.retornoLogin {
+    display: none;
+}
+
+.pRertonoLogin {
+    color: black;
+    margin-bottom: 25px;
+    font-size: 13px;
+    padding: 10px;
+    background-color: #e4b32c;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}

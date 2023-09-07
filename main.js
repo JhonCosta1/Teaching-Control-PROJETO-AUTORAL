@@ -42,7 +42,7 @@ btnRecSenha.addEventListener("click", (e)=>{
     cpfRec.style.display = "none"
     btnRecSenha.style.display = "none"
     retornoCadastroRec.style.display = "block"
-    retornoRecuperar.innerHTML = "Enviamos para seu e-mail " + emailRec.value + " o link para redefinir a senha."
+    retornoRecuperar.innerHTML = `Enviamos para seu e-mail ${emailRec.value} o link para redefinir a senha.`
     emailRec.value = ""
     cpfRec.value = ""
   }
@@ -65,10 +65,10 @@ btnCadastrar.addEventListener("click", (e)=>{
       let userCadastrados = JSON.parse(localStorage.getItem('userCadastrados') || '[]')
 
       userCadastrados.push({
-        nome: userC,
-        senha: senhaC,
-        email: emailC,
-        cpf: cpfC
+        nomeR: userC,
+        senhaR: senhaC,
+        emailR: emailC,
+        cpfR: cpfC
       })
   
       localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
@@ -110,7 +110,7 @@ btnDuvida.addEventListener("click", (e)=>{
     textoAjuda.style.display = "none"
     btnDuvida.style.display = "none"
     retornoCadastroAjuda.style.display = "block"
-    retornoCadastroP.innerHTML = "Recebemos sua mensagem! Retornaremos o contato em até 03 dias úteis através do seu e-mail  " + emailAjuda.value + "."
+    retornoCadastroP.innerHTML = `Recebemos sua mensagem! Retornaremos o contato em até 03 dias úteis através do seu e-mail ${emailAjuda.value}.`
     emailAjuda.value = ""
     cpfAjuda.value = ""
     textoAjuda.value = ""
@@ -200,7 +200,61 @@ let redirecionar = ()=>{
   a.target = "_self"
   a.click()
 }
+
+let validarAcesso = ()=>{
+  let usuarioValidar = document.querySelector("#usuarioValidar")
+  let senhaValidar = document.querySelector("#senhaValidar")
+  let userCadastrados = []
+
+  let validacaoUsuarioEntrar = {
+    nome: "",
+    senha: "",
+    email: "",
+    cpf: ""
+  }
+
+  userCadastrados = JSON.parse(localStorage.getItem('userCadastrados'))
+  
+  userCadastrados.forEach((usuario) => {
+    if(usuarioValidar.value == usuario.nomeR && senhaValidar.value == usuario.senhaR){
+      validacaoUsuarioEntrar = {
+        nome: usuario.nomeR,
+        senha: usuario.senhaR,
+        email: usuario.emailR,
+        cpf: usuario.cpfR
+      }
+    }
+  })
+
+  if(usuarioValidar.value == validacaoUsuarioEntrar.nome && senhaValidar.value == validacaoUsuarioEntrar.senha){
+    let retornoLogin = document.querySelector(".retornoLogin")
+    let pRertonoLogin = document.querySelector(".pRertonoLogin")
+    retornoLogin.style.display = "block"
+    pRertonoLogin.style.backgroundColor = "#72643de3"
+    pRertonoLogin.innerHTML = "Acesso liberado!"
+    let tokenValidar = Math.random().toString(13).substring(2)
+    localStorage.setItem('token', tokenValidar)
+
+    setTimeout(()=>{
+      retornoLogin.style.display = "none"
+      redirecionar()
+    }, 3000)
+
+
+  } else {
+    let retornoLogin = document.querySelector(".retornoLogin")
+    let pRertonoLogin = document.querySelector(".pRertonoLogin")
+    retornoLogin.style.display = "block"
+    pRertonoLogin.innerHTML = "Usuário e/ou senha inválido(s)"
+    setTimeout(()=>{
+      retornoLogin.style.display = "none"
+    }, 3000)
+    
+  }
+
+}
+
 entrar.addEventListener("click",()=>{
-  redirecionar()
+  validarAcesso()
 })
 
