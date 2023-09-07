@@ -27,7 +27,7 @@ let redirecionarLogin = ()=>{
     recuperarSenhaCorpo.style.display = "none"
     ajudaTela.style.display = "none"
     retornoCadastro.style.display = "none"
-  }, 3000)
+  }, 4000)
 }
 
 btnRecSenha.addEventListener("click", (e)=>{
@@ -161,6 +161,7 @@ guardaBtn.map((botao)=>{
               cadastroCorpo.style.display = "none";
               recuperarSenhaCorpo.style.display = "block";
               ajudaTela.style.display = "none";
+              btnRecSenha.style.display = "block";
               break;
 
             case btnC.includes("Voltar para tela de login"):
@@ -168,16 +169,16 @@ guardaBtn.map((botao)=>{
               cadastroCorpo.style.display = "none";
               recuperarSenhaCorpo.style.display = "none";
               ajudaTela.style.display = "none";
-              tituloDuvida.style.display = "block"
-              emailAjuda.style.display = "block"
-              cpfAjuda.style.display = "block"
-              textoAjuda.style.display = "block"
-              retornoCadastroAjuda.style.display = "none"
-              btnDuvida.style.display = "block"
-              emailRec.style.display = "block"
-              cpfRec.style.display = "block"
-              btnRecSenha.style.display = "none"
-              retornoCadastroRec.style.display = "none"
+              tituloDuvida.style.display = "block";
+              emailAjuda.style.display = "block";
+              cpfAjuda.style.display = "block";
+              textoAjuda.style.display = "block";
+              retornoCadastroAjuda.style.display = "none";
+              btnDuvida.style.display = "block";
+              emailRec.style.display = "block";
+              cpfRec.style.display = "block";
+              btnRecSenha.style.display = "none";
+              retornoCadastroRec.style.display = "none";
               break;
 
             case btnC.includes("suporte"):
