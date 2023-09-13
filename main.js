@@ -226,7 +226,7 @@ let validarAcesso = ()=>{
     }
   })
 
-  if(usuarioValidar.value == validacaoUsuarioEntrar.nome && senhaValidar.value == validacaoUsuarioEntrar.senha){
+  if(usuarioValidar.value.trim() == validacaoUsuarioEntrar.nome && usuarioValidar.value.trim() != "" && senhaValidar.value.trim() == validacaoUsuarioEntrar.senha && senhaValidar.value.trim() != ""){
     let retornoLogin = document.querySelector(".retornoLogin")
     let pRertonoLogin = document.querySelector(".pRertonoLogin")
     retornoLogin.style.display = "block"
