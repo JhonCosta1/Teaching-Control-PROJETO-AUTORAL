@@ -63,16 +63,15 @@ btnCadastrar.addEventListener("click", (e)=>{
     if(senhaC === senhaC2 && emailC === emailC2 && cpfC === cpfC2){
       let userCadastrados = JSON.parse(localStorage.getItem('userCadastrados') || '[]')
       const userExistente = userCadastrados.some((usuario) => usuario.nomeR === userC);
-
-      if(!userExistente){
-  
+      const cpfExistente = userCadastrados.some((cpf) => cpf.cpfR === cpfC);
+      const emailExistente = userCadastrados.some((email) => email.emailR === emailC);
+      if(!userExistente && !cpfExistente && !emailExistente){
         userCadastrados.push({
           nomeR: userC,
           senhaR: senhaC,
           emailR: emailC,
           cpfR: cpfC
         })
-    
         localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
         retornoCadastro.style.display = "block"
         retornoCadastroH3.innerHTML = "Cadastro finalizado com sucesso! Você será direcionado para tela de Login em alguns segundos."
@@ -80,8 +79,6 @@ btnCadastrar.addEventListener("click", (e)=>{
       } else {
         console.log('existe')
       }
-
-
     } else if(senhaC !== senhaC2 ){
       retornoCadastro.style.display = "block"
       retornoCadastroH3.innerHTML = "Lamento! As senhas devem ser iguais!"
