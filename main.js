@@ -50,7 +50,7 @@ btnRecSenha.addEventListener("click", (e)=>{
 
 btnCadastrar.addEventListener("click", (e)=>{
   e.preventDefault()
-  let userC = document.querySelector("#userC").value.trim()
+  let userC = document.querySelector("#userC").value.trim() 
   let senhaC = document.querySelector("#senhaC").value.trim()
   let senhaC2 = document.querySelector("#senhaC2").value.trim()
   let emailC = document.querySelector("#emailC").value.trim()
@@ -65,19 +65,30 @@ btnCadastrar.addEventListener("click", (e)=>{
       const userExistente = userCadastrados.some((usuario) => usuario.nomeR === userC);
       const cpfExistente = userCadastrados.some((cpf) => cpf.cpfR === cpfC);
       const emailExistente = userCadastrados.some((email) => email.emailR === emailC);
-      if(!userExistente && !cpfExistente && !emailExistente){
-        userCadastrados.push({
-          nomeR: userC,
-          senhaR: senhaC,
-          emailR: emailC,
-          cpfR: cpfC
-        })
-        localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
-        retornoCadastro.style.display = "block"
-        retornoCadastroH3.innerHTML = "Cadastro finalizado com sucesso! Você será direcionado para tela de Login em alguns segundos."
-        redirecionarLogin()
+      if(!userExistente){
+        if(!cpfExistente){
+          if(!emailExistente){
+            userCadastrados.push({
+            nomeR: userC,
+            senhaR: senhaC,
+            emailR: emailC,
+            cpfR: cpfC
+            })
+            localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
+            retornoCadastro.style.display = "block"
+            retornoCadastroH3.innerHTML = "Cadastro finalizado com sucesso! Você será direcionado para tela de Login em alguns segundos."
+            redirecionarLogin()
+          } else {
+            retornoCadastro.style.display = "block"
+            retornoCadastroH3.innerHTML = "Email já cadastrado!"
+          }
+        } else {
+          retornoCadastro.style.display = "block"
+          retornoCadastroH3.innerHTML = "Cpf já cadastrado!"
+        }
       } else {
-        console.log('existe')
+        retornoCadastro.style.display = "block"
+        retornoCadastroH3.innerHTML = "Usuário já cadastrado!"
       }
     } else if(senhaC !== senhaC2 ){
       retornoCadastro.style.display = "block"
