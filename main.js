@@ -59,22 +59,28 @@ btnCadastrar.addEventListener("click", (e)=>{
   let cpfC2 = document.querySelector("#cpfC2").value.trim()
   let retornoCadastro = document.querySelector(".retornoCadastro")
   let retornoCadastroH3 = document.querySelector(".retornoCadastroH3")
-
   if(userC && senhaC && senhaC2 && emailC && emailC2 && cpfC && cpfC2 != ""){
     if(senhaC === senhaC2 && emailC === emailC2 && cpfC === cpfC2){
       let userCadastrados = JSON.parse(localStorage.getItem('userCadastrados') || '[]')
+      const userExistente = userCadastrados.some((usuario) => usuario.nomeR === userC);
 
-      userCadastrados.push({
-        nomeR: userC,
-        senhaR: senhaC,
-        emailR: emailC,
-        cpfR: cpfC
-      })
+      if(!userExistente){
   
-      localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
-      retornoCadastro.style.display = "block"
-      retornoCadastroH3.innerHTML = "Cadastro finalizado com sucesso! Você será direcionado para tela de Login em alguns segundos."
-      redirecionarLogin()
+        userCadastrados.push({
+          nomeR: userC,
+          senhaR: senhaC,
+          emailR: emailC,
+          cpfR: cpfC
+        })
+    
+        localStorage.setItem('userCadastrados', JSON.stringify(userCadastrados))
+        retornoCadastro.style.display = "block"
+        retornoCadastroH3.innerHTML = "Cadastro finalizado com sucesso! Você será direcionado para tela de Login em alguns segundos."
+        redirecionarLogin()
+      } else {
+        console.log('existe')
+      }
+
 
     } else if(senhaC !== senhaC2 ){
       retornoCadastro.style.display = "block"
@@ -85,7 +91,9 @@ btnCadastrar.addEventListener("click", (e)=>{
     } else if(cpfC !== cpfC2 ){
       retornoCadastro.style.display = "block"
       retornoCadastroH3.innerHTML = "Lamento! Os CPFs devem ser iguais!"
-    } 
+    } else if(userCadastrados.nomeR == userC.value) {
+      consle.log(userCadastrados.userC)
+    }
 
   } else {
     retornoCadastro.style.display = "block"
