@@ -35,11 +35,13 @@ menu.map((selecionado)=>{
         let quadroNoticias = document.querySelector(".quadro-noticias")
         let areaCadastrarNoticia = document.querySelector(".area-cadastrar-noticia")
         let perfil = document.querySelector(".perfil-geral")
+        let areaAdmP = document.querySelector(".areaAdmP")
         switch (true) {
             case clicado.includes("Início"):
                 areaWC.style.display = "";
                 quadroNoticias.style.display = "";
                 perfil.style.display = "none";
+                areaAdmP.style.display = "none";
                 areaCadastrarNoticia.style.display = "none";
                 break;
 
@@ -47,15 +49,25 @@ menu.map((selecionado)=>{
                 areaWC.style.display = "none";
                 perfil.style.display = "none";
                 quadroNoticias.style.display = "none";
+                areaAdmP.style.display = "none";
                 areaCadastrarNoticia.style.display = "";
                 break;
 
-                case clicado.includes("Perfil"):
-                    areaWC.style.display = "none";
-                    quadroNoticias.style.display = "none";
-                    areaCadastrarNoticia.style.display = "none";
-                    perfil.style.display = "";
-                    break;
+            case clicado.includes("Perfil"):
+                areaWC.style.display = "none";
+                quadroNoticias.style.display = "none";
+                areaCadastrarNoticia.style.display = "none";
+                areaAdmP.style.display = "none";
+                perfil.style.display = "";
+                break;
+
+            case clicado.includes("Administração de Professores"):
+                areaWC.style.display = "none";
+                quadroNoticias.style.display = "none";
+                areaCadastrarNoticia.style.display = "none";
+                perfil.style.display = "none";
+                areaAdmP.style.display = "";
+                break;
             
                 default: 
                     break;

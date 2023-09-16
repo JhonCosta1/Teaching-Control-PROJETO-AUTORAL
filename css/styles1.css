@@ -402,6 +402,18 @@ input[type="date"]
     padding: 5px;
 }
 
-.perfil-geral label {
-    
+.tabela-adm-p h1 {
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.tabela-adm-p {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabela-g {
+    width: 1000px;
 }
