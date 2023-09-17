@@ -290,6 +290,18 @@ input[type="date"]
     border: 1px solid #75b4f7;
 }
 
+.cadastrarProf {
+    margin-top: 15px;
+    width: 25%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #3194fd;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
 .cconteudo{
     resize: none;
     z-index: 1;
@@ -416,4 +428,38 @@ input[type="date"]
 
 .tabela-g {
     width: 1000px;
+}
+
+table {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+}
+
+th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    background: #aeaee6;
+}
+
+tr {
+    text-align: center;
+    background: #e5dfdf;
+}
+
+tr:hover {
+    background-color: #9cd5d4;
+}
+
+.scroll-tabela {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.fixacabe {
+    position: sticky;
+    top: 0;
 }
