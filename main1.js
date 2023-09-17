@@ -230,8 +230,8 @@ if(localStorage.getItem('token') == null) {
     redirecionarLogin()
 }
 
-cadastrarProfBtn.addEventListener("click", (e)=>{
-    e.preventDefault()
+let criarListaProfessores = ()=>{
+
     let tabela = document.querySelector(".item-tabela")
     let nomeProfessorTabela = document.querySelector("#nomePro").value
 
@@ -276,6 +276,15 @@ cadastrarProfBtn.addEventListener("click", (e)=>{
     tr.appendChild(td5)
     tr.appendChild(td6)
     tabela.appendChild(tr)
+
+    tr.addEventListener("click", () => {
+        tr.remove()
+    })
+}
+
+cadastrarProfBtn.addEventListener("click", (e)=>{
+    e.preventDefault()
+    criarListaProfessores()
 })
 
 
