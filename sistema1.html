@@ -121,79 +121,9 @@
                                 <th>Status</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <!-- Linha 1 -->
-                            <tr>
-                                <td>João</td>
-                                <td>Matemática</td>
-                                <td>Manhã</td>
-                                <td>60 horas</td>
-                                <td>9ª Série</td>
-                                <td>Ativo</td>
-                            </tr>
-                            <!-- Linha 2 -->
-                            <tr>
-                                <td>Maria</td>
-                                <td>Ciências</td>
-                                <td>Tarde</td>
-                                <td>45 horas</td>
-                                <td>7ª Série</td>
-                                <td>Inativo</td>
-                            </tr>
-                            <!-- Linha 2 -->
-                            <tr>
-                                <td>Maria</td>
-                                <td>Ciências</td>
-                                <td>Tarde</td>
-                                <td>45 horas</td>
-                                <td>7ª Série</td>
-                                <td>Inativo</td>
-                            </tr>
-                            <!-- Linha 2 -->
-                            <tr>
-                                <td>Maria</td>
-                                <td>Ciências</td>
-                                <td>Tarde</td>
-                                <td>45 horas</td>
-                                <td>7ª Série</td>
-                                <td>Inativo</td>
-                            </tr>
-                            <!-- Linha 1 -->
-                            <tr>
-                                <td>João</td>
-                                <td>Matemática</td>
-                                <td>Manhã</td>
-                                <td>60 horas</td>
-                                <td>9ª Série</td>
-                                <td>Ativo</td>
-                            </tr>
-                            <!-- Linha 2 -->
-                            <tr>
-                                <td>Maria</td>
-                                <td>Ciências</td>
-                                <td>Tarde</td>
-                                <td>45 horas</td>
-                                <td>7ª Série</td>
-                                <td>Inativo</td>
-                            </tr>
-                            <!-- Linha 2 -->
-                            <tr>
-                                <td>Maria</td>
-                                <td>Ciências</td>
-                                <td>Tarde</td>
-                                <td>45 horas</td>
-                                <td>7ª Série</td>
-                                <td>Inativo</td>
-                            </tr>
-                            <!-- Linha 2 -->
-                            <tr>
-                                <td>Maria</td>
-                                <td>Ciências</td>
-                                <td>Tarde</td>
-                                <td>45 horas</td>
-                                <td>7ª Série</td>
-                                <td>Inativo</td>
-                            </tr>
+                        <tbody class="item-tabela">
+                    
+                            
                         </tbody>
                     </table>
                 </div>
@@ -203,7 +133,7 @@
                     <form>
                         <div>
                             <label for="nome">Nome:</label><br>
-                            <input type="text" id="nome" name="nome">
+                            <input type="text" id="nomePro" name="nome">
                         </div>
                         <div>
                             <label for="disciplina">Disciplina:</label><br>
@@ -235,7 +165,7 @@
                                 <option value="44">44 horas</option>
                             </select>
                         </div>
-                        <div">
+                        <div>
                             <label for="serie">Série:</label><br>
                             <select id="serie" name="serie">
                                 <option value="alfabetizacao">Alfabetização</option>
@@ -246,11 +176,14 @@
                             </select>
                         </div>
                         <div>
-                            <label for="status">Status:</label>
-                            <input type="radio" id="ativo" name="status" value="ativo">
-                            <label for="ativo">Ativo</label>
-                            <input type="radio" id="inativo" name="status" value="inativo">
-                            <label for="inativo">Inativo</label>
+                            <label for="status">Status:</label><br>
+                            <select id="status" name="status">
+                                <option value="ativo">Ativo</option>
+                                <option value="inativo">Inativo</option>
+                                <option value="atestado">Atestado</option>
+                                <option value="férias">Férias</option>
+                                <option value="licenca">Licença</option>
+                            </select>
                         </div>
                         <button type="submit" class="cadastrarProf">Cadastrar</button>
                     </form>

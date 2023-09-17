@@ -26,6 +26,7 @@ let lugarNoticia = document.querySelector(".lugar-noticias")
 let imgF = document.querySelector(".img-noticia")
 let geral = document.querySelector(".quadro-noticias")
 let retirar = document.querySelector(".delIcon")
+let cadastrarProfBtn = document.querySelector(".cadastrarProf")
 
 menu.map((selecionado)=>{
     selecionado.addEventListener("click", (e)=>{
@@ -229,10 +230,53 @@ if(localStorage.getItem('token') == null) {
     redirecionarLogin()
 }
 
+cadastrarProfBtn.addEventListener("click", (e)=>{
+    e.preventDefault()
+    let tabela = document.querySelector(".item-tabela")
+    let nomeProfessorTabela = document.querySelector("#nomePro").value
 
+    let disciplina = document.querySelector("#disciplina")
+    let disciplinaIndice = disciplina.selectedIndex
+    let disciplinaSelecionada = disciplina.options[disciplinaIndice].text
 
+    let turno = document.querySelector("#turno")
+    let turnoIndice = turno.selectedIndex
+    let turnoSelecionada = turno.options[turnoIndice].text
 
+    let cargah = document.querySelector("#carga-horaria")
+    let cargahIndice = cargah.selectedIndex
+    let cargahSelecionada = cargah.options[cargahIndice].text
 
+    let serie = document.querySelector("#serie")
+    let serieIndice = serie.selectedIndex
+    let serieSelecionada = serie.options[serieIndice].text
+
+    let statusp = document.querySelector("#status")
+    let statuspIndice = statusp.selectedIndex
+    let statuspSelecionada = statusp.options[statuspIndice].text
+
+    let tr = document.createElement("tr")
+    let td1 = document.createElement("td")
+    let td2 = document.createElement("td")
+    let td3 = document.createElement("td")
+    let td4 = document.createElement("td")
+    let td5 = document.createElement("td")
+    let td6 = document.createElement("td")
+    td1.innerHTML = nomeProfessorTabela
+    td2.innerHTML = disciplinaSelecionada
+    td3.innerHTML = turnoSelecionada
+    td4.innerHTML = cargahSelecionada
+    td5.innerHTML = serieSelecionada
+    td6.innerHTML = statuspSelecionada
+   
+    tr.appendChild(td1)
+    tr.appendChild(td2)
+    tr.appendChild(td3)
+    tr.appendChild(td4)
+    tr.appendChild(td5)
+    tr.appendChild(td6)
+    tabela.appendChild(tr)
+})
 
 
 
