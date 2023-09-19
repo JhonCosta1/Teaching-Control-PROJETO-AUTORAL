@@ -32,7 +32,7 @@ p.b-n {
     font-size: 16px;
 }
 p.b-c {
-    font-size: 9px;
+    font-size: 13px;
     color: #897aed;
 }
 .perfil-menu {
@@ -181,6 +181,10 @@ main {
     margin-bottom: 30px;
 }
 
+#sair {
+    margin-top: 245px;
+}
+
 .informativo {
     padding: 20px;
     display: block;
@@ -290,7 +294,7 @@ input[type="date"]
     border: 1px solid #75b4f7;
 }
 
-.cadastrarProf {
+.cadastrarProf, .salvarPf, .cadastrarAluno{
     margin-top: 15px;
     width: 100%;
     padding: 10px;
@@ -420,7 +424,13 @@ input[type="date"]
     text-align: center;
 }
 
-.tabela-adm-p {
+.tabela-mat h1 {
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.tabela-adm-p, .tabela-mat {
     display: flex;
     align-items: center;
     flex-direction: column;

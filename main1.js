@@ -27,6 +27,7 @@ let imgF = document.querySelector(".img-noticia")
 let geral = document.querySelector(".quadro-noticias")
 let retirar = document.querySelector(".delIcon")
 let cadastrarProfBtn = document.querySelector(".cadastrarProf")
+let cadastrarAluno = document.querySelector(".cadastrarAluno")
 
 menu.map((selecionado)=>{
     selecionado.addEventListener("click", (e)=>{
@@ -37,6 +38,7 @@ menu.map((selecionado)=>{
         let areaCadastrarNoticia = document.querySelector(".area-cadastrar-noticia")
         let perfil = document.querySelector(".perfil-geral")
         let areaAdmP = document.querySelector(".areaAdmP")
+        let tabelaMat = document.querySelector(".tabela-mat")
         switch (true) {
             case clicado.includes("Início"):
                 areaWC.style.display = "";
@@ -44,6 +46,7 @@ menu.map((selecionado)=>{
                 perfil.style.display = "none";
                 areaAdmP.style.display = "none";
                 areaCadastrarNoticia.style.display = "none";
+                tabelaMat.style.display = "none";
                 break;
 
             case clicado.includes("Publicar atualização ou informativo"):
@@ -52,6 +55,7 @@ menu.map((selecionado)=>{
                 quadroNoticias.style.display = "none";
                 areaAdmP.style.display = "none";
                 areaCadastrarNoticia.style.display = "";
+                tabelaMat.style.display = "none";
                 break;
 
             case clicado.includes("Perfil"):
@@ -60,6 +64,7 @@ menu.map((selecionado)=>{
                 areaCadastrarNoticia.style.display = "none";
                 areaAdmP.style.display = "none";
                 perfil.style.display = "";
+                tabelaMat.style.display = "none";
                 break;
 
             case clicado.includes("Administração de Professores"):
@@ -68,10 +73,20 @@ menu.map((selecionado)=>{
                 areaCadastrarNoticia.style.display = "none";
                 perfil.style.display = "none";
                 areaAdmP.style.display = "";
+                tabelaMat.style.display = "none";
+                break;
+
+            case clicado.includes("Controle de Matrículas"):
+                areaWC.style.display = "none";
+                quadroNoticias.style.display = "none";
+                areaCadastrarNoticia.style.display = "none";
+                perfil.style.display = "none";
+                areaAdmP.style.display = "none";
+                tabelaMat.style.display = "";
                 break;
             
-                default: 
-                    break;
+            default: 
+                break;
         }
     })
 })
@@ -181,19 +196,11 @@ let criarCard = ()=>{
     div.appendChild(divImg)
     div.appendChild(p2)
 
-   
-
- 
     if(cTitulo !== "" && cConteudo !== ""){
         lugarNoticia.appendChild(div)
     } else {
         alert('Lamento! Mas é necessário preencher o Título e incluir um texto para a notícia.')
     }
-   
-
-
-    
-    
 
     btnDel.addEventListener("click", (event) => {
         if (event.target.classList.contains("delIcon")) {
@@ -202,7 +209,6 @@ let criarCard = ()=>{
             
         }
     })
-
 }   
 
 btnPublicar.addEventListener("click",(e)=>{
@@ -226,9 +232,11 @@ sairLogin.addEventListener("click", ()=>{
 if(localStorage.getItem('token') == null) {
     let validadorSemAcesso = document.querySelector(".validador-sem-acesso")
     validadorSemAcesso.style.display = "none"
-    alert('Você deve estar logado para acessar essa página!')
+    alert('Você deve estar logado para acessar esta página!')
     redirecionarLogin()
 }
+
+
 
 let criarListaProfessores = ()=>{
 
@@ -277,26 +285,163 @@ let criarListaProfessores = ()=>{
     tr.appendChild(td6)
     tabela.appendChild(tr)
 
-    tr.addEventListener("click", () => {
-        tr.remove()
+    tr.addEventListener("click", (e) => {
+        e.preventDefault()
+        let divP = document.createElement("div")
+        divP.classList.add("geral-modal")
+        let div2 = document.createElement("div")
+        let h4 = document.createElement("h4")
+        h4.classList.add("modal-titulo")
+        h4.innerHTML = "ALERTA"
+        div2.appendChild(h4)                
+        let div3 = document.createElement("div")
+        div3.classList.add("conteudo-modal")
+        let p = document.createElement("p")
+        let p2 = document.createElement("p2")
+        p.innerText = "Esta ação deletará do registro o professor selecionado."
+        p2.innerText = "Deseja seguir com a exclusão?"
+        let div4 = document.createElement("div")
+        div4.classList.add("tituloDel")
+        div3.appendChild(p)
+        div3.appendChild(p2)
+        div3.appendChild(div4)
+        let btnMdel = document.createElement("button")
+        btnMdel.innerText = "Deletar"
+        btnMdel.classList.add("btn-modal-ap")
+        
+        let btnMvol = document.createElement("button")
+        btnMvol.innerText = "Voltar"
+        btnMvol.classList.add("btn-modal-vo")
+        divP.appendChild(div2)
+        divP.appendChild(div3)
+        divP.appendChild(btnMdel)
+        divP.appendChild(btnMvol)
+        tabela.appendChild(divP)
+
+        btnMdel.addEventListener("click", () => {
+            tr.remove()
+            divP.remove()
+        })
+
+
+
+        btnMvol.addEventListener("click", () => {
+            divP.remove()
+        })
     })
 }
 
+let criarListaAluno = ()=>{
+
+    let tabela2 = document.querySelector(".item-tabela2")
+    let nomeA = document.querySelector("#nomeA").value
+
+    let sexo = document.querySelector("#sexo")
+    let sexoIndice = sexo.selectedIndex
+    let sexoSelecionada = sexo.options[sexoIndice].text
+
+    let turno2 = document.querySelector("#turno2")
+    let turno2Indice = turno2.selectedIndex
+    let turno2Selecionada = turno2.options[turno2Indice].text
+
+    let serie2 = document.querySelector("#serie")
+    let serie2Indice = serie2.selectedIndex
+    let serie2Selecionada = serie2.options[serie2Indice].text
+
+    let financeiro = document.querySelector("#financeiro")
+    let financeiroIndice = financeiro.selectedIndex
+    let financeiroSelecionada = financeiro.options[financeiroIndice].text
+
+
+    let statusp = document.querySelector("#status")
+    let statuspIndice = statusp.selectedIndex
+    let statuspSelecionada = statusp.options[statuspIndice].text
+
+    let tr = document.createElement("tr")
+    let td1 = document.createElement("td")
+    let td2 = document.createElement("td")
+    let td3 = document.createElement("td")
+    let td4 = document.createElement("td")
+    let td5 = document.createElement("td")
+    let td6 = document.createElement("td")
+    td1.innerHTML = nomeA
+    td2.innerHTML = sexoSelecionada
+    td3.innerHTML = turno2Selecionada
+    td4.innerHTML = serie2Selecionada
+    td5.innerHTML = financeiroSelecionada
+    td6.innerHTML = statuspSelecionada
+   
+    tr.appendChild(td1)
+    tr.appendChild(td2)
+    tr.appendChild(td3)
+    tr.appendChild(td4)
+    tr.appendChild(td5)
+    tr.appendChild(td6)
+    tabela2.appendChild(tr)
+
+    tr.addEventListener("click", (e) => {
+        e.preventDefault()
+        let divP = document.createElement("div")
+        divP.classList.add("geral-modal")
+        let div2 = document.createElement("div")
+        let h4 = document.createElement("h4")
+        h4.classList.add("modal-titulo")
+        h4.innerHTML = "ALERTA"
+        div2.appendChild(h4)                
+        let div3 = document.createElement("div")
+        div3.classList.add("conteudo-modal")
+        let p = document.createElement("p")
+        let p2 = document.createElement("p2")
+        p.innerText = "Esta ação deletará do registro o aluno selecionado."
+        p2.innerText = "Deseja seguir com a exclusão?"
+        let div4 = document.createElement("div")
+        div4.classList.add("tituloDel")
+        div3.appendChild(p)
+        div3.appendChild(p2)
+        div3.appendChild(div4)
+        let btnMdel = document.createElement("button")
+        btnMdel.innerText = "Deletar"
+        btnMdel.classList.add("btn-modal-ap")
+        
+        let btnMvol = document.createElement("button")
+        btnMvol.innerText = "Voltar"
+        btnMvol.classList.add("btn-modal-vo")
+        divP.appendChild(div2)
+        divP.appendChild(div3)
+        divP.appendChild(btnMdel)
+        divP.appendChild(btnMvol)
+        tabela2.appendChild(divP)
+
+        btnMdel.addEventListener("click", () => {
+            tr.remove()
+            divP.remove()
+        })
+
+
+
+        btnMvol.addEventListener("click", () => {
+            divP.remove()
+        })
+    })
+}
+
+
 cadastrarProfBtn.addEventListener("click", (e)=>{
     e.preventDefault()
-    criarListaProfessores()
+    let nomeProfessorTabela = document.querySelector("#nomePro").value.trim()
+    if(nomeProfessorTabela !== ""){
+        criarListaProfessores()
+    } else {
+        alert('Necessário preencher o nome do Professor!')
+    }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+cadastrarAluno.addEventListener("click", (e)=>{
+    e.preventDefault()
+    let nomeA = document.querySelector("#nomeA").value.trim()
+    if(nomeA !== ""){
+        criarListaAluno()
+    } else {
+        alert('Necessário preencher o nome do Aluno!')
+    }
+})

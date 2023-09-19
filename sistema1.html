@@ -34,9 +34,6 @@
                     <li class="atalhos atalhos-p"><a href="#"><i class="fa-solid fa-user i-perfil"></i><span class="texto-menu t-perfil area-perfil menu">Perfil</span></a></li>
                     <li class="atalhos"><a href="#"><i class="fa-solid fa-users i-adm"></i><span class="texto-menu t-adm area-adm-prof menu">Administração de Professores</span></a></li>
                     <li class="atalhos"><a href="#"><i class="fa-solid fa-address-card i-mat"></i><span class="texto-menu t-mat area-control-matriculas menu">Controle de Matrículas</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-book i-eva"></i><span class="texto-menu t-eva area-evasao menu">Controle de Evasão</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-money-check-dollar i-fin"></i><span class="texto-menu t-fin area-financeiro menu">Financeiro</span></a></li>
-                    <li class="atalhos"><a href="#"><i class="fa-solid fa-gear i-con"></i><span class="texto-menu t-con area-configuracao menu">Configurações</span></a></li>
                     <li id="sair" class="atalhos"><a href="#"><i class="fa-solid  fa-person-walking-dashed-line-arrow-right fa-0 i-sair tam-icon"></i><span class="texto-menu t-sair sair">Sair</span></a></li>
                 </ulcla>
             </nav>
@@ -49,7 +46,6 @@
                         </div>
                         <div class="dados-logado">
                             <p class="b-v">Bem-vindo(a),</p>
-                            <p class="b-n">JHON COSTA</p>
                             <P class="b-c">DIRETOR</P>
                         </div>
                     </div>
@@ -85,7 +81,7 @@
 
             <section class="perfil-geral" style="display: none;">
                 
-                <form action="" class="form-perfil">
+                <form class="form-perfil">
                     <h1>Seu Perfil</h1>
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required><br><br>
@@ -104,6 +100,7 @@
                 
                     <label for="cargo">Cargo:</label>
                     <input type="text" id="cargo" name="cargo" required><br><br>
+                    <button type="submit" class="salvarPf">Salvar</button>
                 </form>
             </section>
 
@@ -133,7 +130,7 @@
                     <form>
                         <div>
                             <label for="nome">Nome:</label><br>
-                            <input type="text" id="nomePro" name="nome">
+                            <input type="text" id="nomePro" name="nome" maxlength="31">
                         </div>
                         <div>
                             <label for="disciplina">Disciplina:</label><br>
@@ -190,6 +187,85 @@
                 </div>
                 
 
+            </section>
+
+
+            <section class="tabela-mat" style="display: none;">
+                <h1>Controle de Matrícula</h1>
+                <div class="scroll-tabela">
+                    <table border="0" class="tabela-g">
+                        <thead class="fixacabe">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Sexo</th>
+                                <th>Turno</th>
+                                <th>Série</th>
+                                <th>Financeiro</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="item-tabela2">
+                    
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <h1>Cadastrar Aluno</h1>
+                <div>
+                    <form>
+                        <div>
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nomeA" name="nome" maxlength="31">
+                        </div>
+                        <div>
+                            <label for="sexo">Sexo:</label><br>
+                            <select id="sexo" name="sexo">
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                        </div>
+                        <div >
+                            <label for="turno">Turno:</label><br>
+                            <select id="turno2" name="turno">
+                                <option value="manha">Manhã</option>
+                                <option value="tarde">Tarde</option>
+                                <option value="noite">Noite</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="serie">Série:</label><br>
+                            <select id="serie2" name="serie">
+                                <option value="alfabetizacao">Alfabetização</option>
+                                <option value="fundamentao-1">Fundamental 1</option>
+                                <option value="fundamentao-2">Fundamental 2</option>
+                                <option value="ensino-medio">Ensino Médio</option>
+                                <option value="preparatorio">Preparatório</option>
+                            </select>
+                        </div>
+                        <div >
+                            <label for="financeiro">Financeiro:</label><br>
+                            <select id="financeiro" name="financeiro">
+                                <option value="pago">PAGO</option>
+                                <option value="atrasado-1">ATRASADO I</option>
+                                <option value="atrasado-2">ATRASADO II</option>
+                                <option value="atrasado-3-n">ATRASADO III NOTIFICAÇÃO</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="status">Status:</label><br>
+                            <select id="status" name="status">
+                                <option value="ativo">Ativo</option>
+                                <option value="evadido">Evadido</option>
+                                <option value="atestado">Atestado</option>
+                                <option value="férias">Férias</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="cadastrarAluno">Cadastrar</button>
+                    </form>
+                </div>
+                
             </section>
         </main>
 
