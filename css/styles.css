@@ -308,3 +308,10 @@ textarea#area-d{
     }
 
 }
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    #area-de-acesso {
+        margin-left: 30px;
+    }
+
+}
