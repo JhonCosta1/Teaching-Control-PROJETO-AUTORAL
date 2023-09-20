@@ -222,6 +222,16 @@ let validarAcesso = ()=>{
   let senhaValidar = document.querySelector("#senhaValidar")
   let userCadastrados = []
 
+  if(usuarioValidar.value.trim() == "" || senhaValidar.value.trim() == "") {
+    let retornoLogin = document.querySelector(".retornoLogin")
+    let pRertonoLogin = document.querySelector(".pRertonoLogin")
+    retornoLogin.style.display = "block"
+    pRertonoLogin.innerHTML = "Usuário e/ou senha inválido(s)"
+    setTimeout(()=>{
+      retornoLogin.style.display = "none"
+    }, 3000)
+  }
+
   let validacaoUsuarioEntrar = {
     nome: "",
     senha: "",
