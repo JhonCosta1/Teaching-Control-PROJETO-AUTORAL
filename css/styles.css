@@ -291,6 +291,9 @@ textarea#area-d{
     box-shadow: none;
     }
 
+    .icon {
+        left: 39px;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -306,16 +309,10 @@ textarea#area-d{
     height: 100%;
     box-shadow: none;
     }
-
-    .icon {
-        left: 39px;
-    }
-
 }
 
 @media (min-width: 769px) and (max-width: 1023px) {
     #area-de-acesso {
         margin-left: 30px;
     }
-
 }
