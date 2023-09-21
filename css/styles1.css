@@ -473,3 +473,29 @@ tr:hover {
     position: sticky;
     top: 0;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .lugar-noticias {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+    }
+
+    .delIcon {
+        left: -1px;
+    }
+
+    .quadro-noticias {
+        align-items: stretch;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+
+}
